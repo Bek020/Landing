@@ -1,0 +1,116 @@
+.article 
+  &__container
+    margin: 0 auto
+    max-width: 360px
+    padding-bottom: 20px
+
+    +tablet
+      max-width: 740px
+
+    +desktop
+      max-width: 1080px
+
+  &__row
+    +flex()
+    margin: 50px 0
+    font-family: 'Montserrat', sans-serif
+
+    .row__title
+      font-family: 'Arvo', serif
+      font-size: 30px
+      margin: 0
+      padding-left: 40px
+
+      +tablet
+        padding-left: 230px
+
+      +desktop
+        padding-left: 390px
+      
+
+  &__list
+    padding: 0
+    list-style-type: none
+    margin: 20px 0
+    min-width: 320px 
+
+    +tablet 
+      +grid(repeat(2, 1fr))
+
+    +desktop
+      +grid(repeat(3, 1fr))
+
+  &__item
+    background: #F7F8F9
+    margin: 30px 0
+    height: 410px
+
+    +phone
+      margin: 0 auto
+      margin-top: 30px 
+      max-width: 360px
+
+    +desktop
+      margin: 20px
+
+  &__black
+      background: #292929
+      color: $textColor
+
+  &__yellow
+      background: #FFC80A
+      color: $textColor
+  
+  &__img
+    width: 100%
+
+  &__text
+    margin: 0 auto
+    width: 280px
+    
+  &__title
+    font-family: 'Arvo', serif
+
+  &__desc
+    width: 270px
+    font-family: 'Open Sans', sans-serif
+
+  &__info
+    +flex()
+    height: 20px
+    font-family: 'Montserrat', sans-serif
+
+    &--right
+      padding-left: 100px
+
+    .fas
+      padding-right: 10px
+
+  &__media
+    height: 500px
+
+    +tablet
+      margin: 0 5px
+      margin-top: 30px
+      max-width: 100%
+
+      div
+        width: 700px
+
+      p
+        width: 680px
+
+    +desktop 
+      margin-top: 20px 
+    
+  &__img
+    height: 213px
+  
++tablet 
+  .article__item:nth-child(5)
+    grid-column: 1 / 3  
+
++desktop 
+  .article__item:nth-child(5)
+    grid-column: 2 / 4   
+    margin: 20px

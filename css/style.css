@@ -1,0 +1,412 @@
+:root {
+  --header-color: #8A72B6;
+  --btn-color: #FFC80A;
+  --text-color: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: white;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Stand
+ */
+.hamburger--stand .hamburger-inner {
+  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
+}
+.hamburger--stand .hamburger-inner::before {
+  transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--stand .hamburger-inner::after {
+  transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--stand.is-active .hamburger-inner {
+  transform: rotate(90deg);
+  background-color: transparent !important;
+  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
+}
+.hamburger--stand.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-45deg);
+  transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--stand.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(45deg);
+  transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.wrapper {
+  margin: 0 auto;
+  background: url(../img/Box.png) no-repeat bottom center #8A72B6;
+  height: 720px;
+  background-size: 100%;
+}
+
+.header {
+  padding: 35px 5px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(138, 114, 182, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -300px;
+  height: 300px;
+  bottom: auto;
+  transition: 0.5s;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+  }
+}
+.nav.is-active {
+  top: 128px;
+}
+.nav__link {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 12px 12px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+@media screen and (min-width: 768px) {
+  .nav__link .fa-search {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.section {
+  color: var(--text-color);
+}
+.section__container {
+  margin: 0 auto;
+  max-width: 750px;
+}
+.section__text {
+  margin: 50px 10px 0;
+  font-family: "Montserrat", sans-serif;
+}
+.section__title {
+  margin: 50px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  width: 300px;
+}
+@media screen and (min-width: 768px) {
+  .section__title {
+    font-size: 60px;
+    width: 500px;
+  }
+}
+.section__desc {
+  margin: 0 10px;
+  font-family: "Arvo", serif;
+}
+@media screen and (min-width: 768px) {
+  .section__desc {
+    padding-top: 170px;
+    width: 200px;
+  }
+}
+.section__btn {
+  margin: 30px 10px;
+  background: var(--btn-color);
+  width: 160px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .wrap__text {
+    display: flex;
+  }
+}
+
+.article__container {
+  margin: 0 auto;
+  max-width: 360px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .article__container {
+    max-width: 740px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__container {
+    max-width: 1080px;
+  }
+}
+.article__row {
+  display: flex;
+  margin: 50px 0;
+  font-family: "Montserrat", sans-serif;
+}
+.article__row .row__title {
+  font-family: "Arvo", serif;
+  font-size: 30px;
+  margin: 0;
+  padding-left: 40px;
+}
+@media screen and (min-width: 768px) {
+  .article__row .row__title {
+    padding-left: 230px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__row .row__title {
+    padding-left: 390px;
+  }
+}
+.article__list {
+  padding: 0;
+  list-style-type: none;
+  margin: 20px 0;
+  min-width: 320px;
+}
+@media screen and (min-width: 768px) {
+  .article__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.article__item {
+  background: #F7F8F9;
+  margin: 30px 0;
+  height: 410px;
+}
+@media screen and (min-width: 480px) {
+  .article__item {
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 360px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__item {
+    margin: 20px;
+  }
+}
+.article__black {
+  background: #292929;
+  color: var(--text-color);
+}
+.article__yellow {
+  background: #FFC80A;
+  color: var(--text-color);
+}
+.article__img {
+  width: 100%;
+}
+.article__text {
+  margin: 0 auto;
+  width: 280px;
+}
+.article__title {
+  font-family: "Arvo", serif;
+}
+.article__desc {
+  width: 270px;
+  font-family: "Open Sans", sans-serif;
+}
+.article__info {
+  display: flex;
+  height: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.article__info--right {
+  padding-left: 100px;
+}
+.article__info .fas {
+  padding-right: 10px;
+}
+.article__media {
+  height: 500px;
+}
+@media screen and (min-width: 768px) {
+  .article__media {
+    margin: 0 5px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+  .article__media div {
+    width: 700px;
+  }
+  .article__media p {
+    width: 680px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__media {
+    margin-top: 20px;
+  }
+}
+.article__img {
+  height: 213px;
+}
+
+@media screen and (min-width: 768px) {
+  .article__item:nth-child(5) {
+    grid-column: 1/3;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .article__item:nth-child(5) {
+    grid-column: 2/4;
+    margin: 20px;
+  }
+}
+.footer {
+  background: #2C2C2C;
+  color: var(--text-color);
+}
+.footer__container {
+  margin: 0 auto;
+  max-width: 360px;
+  padding-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  .footer__container {
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__container {
+    max-width: 1060px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.footer__box {
+  padding: 10px;
+}
+.footer__title {
+  font-family: "Montserrat", sans-serif;
+}
+.footer__desc {
+  display: block;
+  padding-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  color: #929292;
+}
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__line {
+  border: 0.5px solid #494949;
+}
+.footer__img {
+  margin: 18.7px 0;
+}
+
+/*# sourceMappingURL=style.css.map */

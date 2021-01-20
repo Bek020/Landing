@@ -1,0 +1,41 @@
+.section
+  color: $textColor
+
+  &__container
+    margin: 0 auto
+    max-width: 750px
+
+  &__text
+    margin: 50px 10px 0
+    font-family: 'Montserrat', sans-serif
+
+  &__title
+    margin: 50px 10px
+    font-family: 'Montserrat', sans-serif
+    font-size: 40px
+    width: 300px
+
+    +tablet 
+      font-size: 60px
+      width: 500px
+
+  &__desc
+    margin: 0 10px
+    font-family: 'Arvo', serif
+    
+    +tablet 
+      padding-top: 170px 
+      width: 200px
+
+  &__btn
+    margin: 30px 10px
+    background: $btnColor
+    width: 160px
+    height: 40px
+    border-radius: 30px
+    border: none
+    font-family: 'Montserrat', sans-serif
+
+.wrap__text 
+  +tablet 
+    display: flex

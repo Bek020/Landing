@@ -1,0 +1,41 @@
+.footer
+  background: #2C2C2C
+  color: $textColor
+
+  &__container
+    margin: 0 auto
+    max-width: 360px
+    padding-bottom: 100px
+
+    +tablet
+      max-width: 760px
+      +grid(repeat(3, 1fr))
+
+    +desktop
+      max-width: 1060px
+      +grid(repeat(4, 1fr))
+
+  &__box
+    padding: 10px
+
+  &__title
+    font-family: 'Montserrat', sans-serif
+
+  &__desc
+    display: block
+    padding-top: 10px
+    font-family: 'Open Sans', sans-serif
+    text-decoration: none
+    color: #929292
+
+  &__social
+    +flex($main: space-between)
+
+  &__line
+    border: .5px solid #494949
+
+  &__img
+      margin: 18.7px 0
+
+
+  

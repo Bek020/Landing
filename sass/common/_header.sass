@@ -1,0 +1,42 @@
+.wrapper
+  margin: 0 auto
+  background: url(../img/Box.png) no-repeat bottom center #8A72B6
+  height: 720px
+  background-size: 100%
+
+.header
+  padding: 35px 5px
+
+  .container
+    +flex(space-between, center)
+
+.nav 
+  +pos-overlay(rgba(#8A72B6, .9))
+  +flex(center, center, $dir: column)
+  top: -300px
+  height: 300px
+  bottom: auto
+  transition: .5s
+
+  +tablet 
+    position: static
+    +flex($dir: row)
+    height: auto
+
+  &.is-active
+    top: 128px
+
+  &__link 
+    color: $textColor
+    text-decoration: none
+    margin: 12px 12px
+    font-size: 12px
+    font-family: 'Montserrat', sans-serif
+
+    .fa-search
+      +tablet
+        padding-left: 50px
+  
+.hamburger
+  +tablet 
+    display: none
